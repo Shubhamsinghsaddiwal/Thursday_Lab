@@ -7,7 +7,7 @@ public class Sum_Even_Odd {
 
 	public static void main(String[] args) 
 	{
-		int i,even=0,odd=0;
+		int i,even=0,odd=0;                                       //we initialize for i, even and odd
 		char ans;
 		Scanner sc=new Scanner(System.in);
 	
@@ -15,20 +15,20 @@ public class Sum_Even_Odd {
 		{
 			System.out.println("Enter a number");
 			i=sc.nextInt();
-			if(i %2==0)
+			if(i %2==0)                                        //check number is even or odd
 			{
-				even=even+i;
+				even += i;                               //if number is even so we can add this 
 			}else
-				odd += i;
+				odd += i;                                  //if number is odd so we can add this 
 		
 		System.out.println("Do you want to Continue this process y/n :");
 		ans=sc.next().charAt(0);
 	}
-	    while(ans=='Y'||ans=='y');
+	    while(ans=='Y'||ans=='y');                                      //condition for process continue or not
 
 		
-		System.out.println("Sum of odd number is = "+even);
-		System.out.println("sum of even number is = "+odd);
+		System.out.println("Sum of odd number is = "+even);         //display  sum of even number
+		System.out.println("sum of even number is = "+odd);         //display  sum of odd number
 	}
 
 }
