@@ -1,0 +1,74 @@
+/*Lab QUE 7: Program to create a two dimensional array fill it with given few characters in Java
+
+Example:
+
+    Input
+    Enter size of the Array : 5 (rows are cols are same here)
+    Enter first character : @
+    Enter second character : *
+    Enter third character : #
+
+    Output
+
+    # @ @ @ # 
+    * # @ # * 
+    * * # * * 
+    * # @ # * 
+    # @ @ @ #*/
+
+	import java.util.*;
+
+	public class Que_7 {
+			public static void main(String[] args) {
+				Scanner Sc = new Scanner(System.in);
+
+			    System.out.print("Enter size of the Array : ");
+			    int n = Sc.nextInt();
+			   
+			    if (n < 2 || n > 10)                                  // enter size in given range.
+			      System.out.print("Size out of Range");
+			    else {
+			      
+			      char A[][] = new char[n][n]; // declare array object.
+
+			     
+			      System.out.print("Enter first character : ");     // enter different characters for filling the array
+			      char c1 = Sc.next().charAt(0);
+
+			      System.out.print("Enter second character : ");
+			      char c2 = Sc.next().charAt(0);
+
+			      System.out.print("Enter third character : ");
+			      char c3 = Sc.next().charAt(0);
+
+			      for (int i = 0; i < n; i++) {
+			        for (int j = 0; j < n; j++) {
+			         
+			          if (i == j || (i + j) == (n - 1))              // Filling the diagonals with third character
+			            A[i][j] = c3;
+			          else                                           // Filling all other positions with second character
+			            A[i][j] = c2;
+			        }
+			      }
+
+			      for (int i = 0; i < n / 2; i++) {
+			        for (int j = i + 1; j < n - 1 - i; j++) {
+			          
+			          A[i][j] = c1;                                 // Filling the upper positions.
+	       
+			          A[n - 1 - i][j] = c1;                         // Filling the lower positions.
+			        }
+			      }
+
+			      
+			      System.out.println("\nOutput : \n");                // Printing the Matrix
+			      for (int i = 0; i < n; i++) {
+			        for (int j = 0; j < n; j++) {
+			          System.out.print(A[i][j] + " ");
+			        }
+			        System.out.println();
+			      }
+			    }
+			}
+
+		}
