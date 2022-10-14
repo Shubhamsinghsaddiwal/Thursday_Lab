@@ -1,0 +1,42 @@
+/* "Write a Java program to print an array after changing the rows and columns of a given tw array.
+Original Array:
+10 20 30
+40 50 60 After changing the rows and columns of the said array: 10 40
+20 50
+30 60*/
+package Daily_Assignment;
+
+import java.util.Scanner;
+
+public class twoDarray 
+{
+
+public static void main(String[] args)
+{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter no. of rows :");
+	
+	int x=sc.nextInt();                              // initializing var
+	System.out.println("Enter no. of columns :");
+	
+	int y=sc.nextInt();
+	int Array[][]= new int[x][y];
+	System.out.println("Enter the Elements :");
+	
+	for(int i=0;i<x;i++)                            // for loop
+	{
+		for(int j=0;j<y;j++)                    // nested loop
+		{
+			Array[i][j]=sc.nextInt();        // innput from user
+		}
+	}
+	for(int i=0;i<x;i++)
+	{
+		for(int j=0;j<y;j++)                     // nested loop
+		{
+		 System.out.print(Array[i][j]+" ");	  // printing statement 
+		}
+	System.out.println(" ");	
+	}
+}
+} 
